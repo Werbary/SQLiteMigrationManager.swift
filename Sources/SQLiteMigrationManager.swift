@@ -82,9 +82,11 @@ public struct SQLiteMigrationManager {
    Creates the `schema_migrations` table in the database managed by the receiver.
    */
   public func createMigrationsTable() throws {
-    try db.run(MigrationDB.table.create(ifNotExists: true) { table in
+    let expression = MigrationDB.table.create(ifNotExists: true) { table in
       table.column(MigrationDB.version, unique: true)
-    })
+    }
+    print(expression)
+    try db.run(expression)
   }
 
   /**
