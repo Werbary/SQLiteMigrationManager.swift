@@ -1,1 +1,1 @@
-github "stephencelis/SQLite.swift"
+git "https://github.com/Werbary/SQLite.swift" "master"
